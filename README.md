@@ -1,6 +1,6 @@
 # miccai25-struct-da-code
 
-Python/PyTorch codes for my paper submitted to MICCAI25.
+Python/PyTorch codes for our paper (paper id: 1978) submitted to MICCAI25.
 
 ## 0. Prepare dataset
 
@@ -10,5 +10,9 @@ Our paper utilizes four datasets; however, for simplicity, we provide dataset pr
 - 0.2 Run data pre-processing script with Python.
 
 ```bash
-python run.py
+python preprocess_unc_dataset.py --zip_path /path/to/unc/dataset.zip --dataset_name unc --dataset_root ./dataset
 ```
+
+--zip_path: UNC paired 3T-7T dataset zip file path
+--dataset_name: dataset name for output npy folder
+--dataset_root: root directory for preprocessed (i.e., npy) data
