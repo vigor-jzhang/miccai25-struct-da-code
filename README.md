@@ -34,7 +34,7 @@ Step 1. Download the UNC paired 3T-7T dataset using their official link: [paper]
 Step 2. Run data pre-processing script with Python.
 
 ```bash
-python preprocess_unc_dataset.py --zip_path /path/to/unc/dataset.zip --dataset_name unc --dataset_root ./dataset
+(env1) python preprocess_unc_dataset.py --zip_path /path/to/unc/dataset.zip --dataset_name unc --dataset_root ./dataset
 ```
 
 --zip_path: UNC paired 3T-7T dataset zip file path
@@ -48,7 +48,23 @@ python preprocess_unc_dataset.py --zip_path /path/to/unc/dataset.zip --dataset_n
 Run training script with the configure file:
 
 ```bash
-python train.py --config_path ./configs/unc-config.yaml
+(env1) python train.py --config_path ./configs/unc-config.yaml
 ```
 
-Please make sure the ```data_root_dir``` is set as the correct path.
+Please make sure the ```data_root_dir``` is set as the correct path, ```train_domain``` and ```test_domain``` (inferencing domain) are set correctly.
+
+## 4. Inferencing
+
+Run inferencing (zero-shot translation) use the following command:
+
+```bash
+(env1) python sampling.py --config_path ./configs/unc-config.yaml --ckpt_path /path/to/model/ckpt --res_output ./translation_res --trans_num 4
+```
+
+--config_path: config file path
+
+--ckpt_path: path for checkpoint of model weights
+
+--res_output: zero-shot translation from ```test_domian``` to ```train_domain``` results output directory
+
+--trans_num: number of images for running translation
