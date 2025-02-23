@@ -2,6 +2,29 @@
 
 Python/PyTorch codes for our paper (paper id: 1978) submitted to MICCAI25.
 
+## 1. Python environment
+
+The code is tested with Python 3.11.9 and CUDA 12.4.1.
+
+Firstly create a python virtual environment:
+
+```bash
+$ python3 -m venv /path/to/env/folder/env1
+$ source /path/to/env/folder/env1/bin/activate
+```
+
+Update pip:
+
+```bash
+(env1) $ pip install -U pip
+```
+
+Install packages using ```requirements.txt```:
+
+```bash
+(env1) $ pip install -r requirements.txt
+```
+
 ## 0. Prepare dataset
 
 Our paper utilizes four datasets; however, for simplicity, we provide dataset preparation code only for the UNC 3T-7T paired dataset. Other datasets can be prepared using similar code with minor modifications to the data loading process.
