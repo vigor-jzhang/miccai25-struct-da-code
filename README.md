@@ -25,7 +25,7 @@ Install packages using ```requirements.txt```:
 (env1) $ pip install -r requirements.txt
 ```
 
-## 0. Prepare dataset
+## 2. Prepare dataset
 
 Our paper utilizes four datasets; however, for simplicity, we provide dataset preparation code only for the UNC 3T-7T paired dataset. Other datasets can be prepared using similar code with minor modifications to the data loading process.
 
@@ -42,3 +42,13 @@ python preprocess_unc_dataset.py --zip_path /path/to/unc/dataset.zip --dataset_n
 --dataset_name: dataset name for output npy folder
 
 --dataset_root: root directory for preprocessed (i.e., npy) data
+
+## 3. Training
+
+Run training script with the configure file:
+
+```bash
+python train.py --config_path ./configs/unc-config.yaml
+```
+
+Please make sure the ```data_root_dir``` is set as the correct path.
